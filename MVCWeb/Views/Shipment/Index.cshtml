@@ -1,0 +1,69 @@
+﻿@model IEnumerable<MVCWeb.Models.Shipment>
+
+@{
+    ViewBag.Title = "Shipments";
+}
+
+<h2>Shipments</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShippingProvider)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrackingNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOut)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpectedArrivalData)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalShippingCost)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShippingProvider)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrackingNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOut)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpectedArrivalData)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalShippingCost)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

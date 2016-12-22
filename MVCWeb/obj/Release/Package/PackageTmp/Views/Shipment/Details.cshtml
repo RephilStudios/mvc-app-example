@@ -1,0 +1,74 @@
+﻿@model MVCWeb.Models.Shipment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Shipment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShippingProvider)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShippingProvider)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrackingNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrackingNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOut)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOut)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExpectedArrivalData)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExpectedArrivalData)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalShippingCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalShippingCost)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using System.Web.UI.WebControls;
+using Microsoft.AspNet.Identity;
+using MVCWeb.Models;
+
+namespace MVCWeb.Controllers
+{
+    public class HomeController : Controller
+    {
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        public ActionResult About()
+        {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+            ViewBag.Message = "General purpose company website with three tier sql database backend";
+
+            return View();
+        }
+
+    }
+}
